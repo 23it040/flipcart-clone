@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+  <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #2874f0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    padding: 8px;
+  }
+  
+  .header-right a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+  }
+  
+  /* Banner */
+  .banner {
+    background-color: #f0c14b;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .banner h1 {
+    font-size: 48px;
+    color: #2874f0;
+  }
+  
+  .banner p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Product List */
+  .product-list {
+    padding: 20px;
+  }
+  
+  .product-list h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .product-card img {
+    width: 100%;
+  }
+  
+  .product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .product-card p {
+    font-size: 16px;
+    color: #666;
+  }
+  .cart {
+  padding: 20px;
+}
+
+.cart h2 {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.cart-item img {
+  width: 100px;
+}
+
+.cart-item div {
+  flex-grow: 1;
+  margin-left: 15px;
+}
+  
+  </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Big Billion Days Sale!</h1>
+        <p>Shop the best deals on electronics, fashion, and more.</p>
+      </div>
+    
+      <!-- Product Listings -->
+      <div class="product-list">
+        <h2>Featured Products</h2>
+        <div class="products" id="products">
+          <!-- Product cards will be injected here by JavaScript -->
+        </div>
+      </div>
+  <!-- Header -->
+  <header>
+    <div class="logo">Flipkart</div>
+    <input type="text" class="search-bar" placeholder="Search for products">
+    <div class="header-right">
+      
+      <a href="https://www.flipkart.com/">Login</a>
+    </div>
+  </header>
+
+  <div class="header-right">
+    <a href="https://www.flipkart.com/rv/viewcart?start_url=BrowserLaunch_AMP">Cart</a>
+    <a href="https://www.flipkartcareers.com/candidate/login">Login</a>
+  </div>
+</header>
+
+<!-- Cart Items -->
+<div class="cart">
+  <h2>Your Cart</h2>
+  <div id="cart-items">
+    <!-- Cart items will be injected here by JavaScript -->
+  </div>
+  <button onclick="checkout()">Proceed to Checkout</button>
+</div>
+
+
+
+  <!-- Product Details -->
+  <div class="product-details">
+    <h1>MOBILES</h1>
+    <img id="product-image" src="mobile.jpg" alt="iphone 15">
+    <h2 id="iphone 15"></h2>
+    <p id="Advanced dual-camera system
+    48MP Main: 26 mm, ƒ/1.6 aperture, sensor‑shift optical image stabilisation, 100% Focus Pixels, support for super-high-resolution photos (24MP and 48MP)
+    12MP Ultra Wide: 13 mm, ƒ/2.4 aperture and 120° field of view
+    12MP 2x Telephoto (enabled by quad-pixel sensor): 52 mm, ƒ/1.6 aperture, sensor-shift optical image stabilisation, 100% Focus Pixels
+    2x optical zoom in, 2x optical zoom out; 4x optical zoom range
+    Digital zoom up to 10x
+    Sapphire crystal lens cover
+    True Tone flash
+    Photonic Engine"></p>
+    <p><strong>Price:65,000</strong> <span id="product-price"></span> INR</p>
+    <button onclick="addToCart()">Add to Cart</button>
+
+    <img id="product-image" src="m3.jpg" alt="galaxy s24-ultra">
+    <h2 id="galaxy s24-ultra"></h2>
+    <p id="Advanced dual-camera system
+    48MP Main: 26 mm, ƒ/1.6 aperture, sensor‑shift optical image stabilisation, 100% Focus Pixels, support for super-high-resolution photos (24MP and 48MP)
+    12MP Ultra Wide: 13 mm, ƒ/2.4 aperture and 120° field of view
+    12MP 2x Telephoto (enabled by quad-pixel sensor): 52 mm, ƒ/1.6 aperture, sensor-shift optical image stabilisation, 100% Focus Pixels
+    2x optical zoom in, 2x optical zoom out; 4x optical zoom range
+    Digital zoom up to 10x
+    Sapphire crystal lens cover
+    True Tone flash
+    Photonic Engine"></p>
+    <p><strong>Price:1,65,000</strong> <span id="product-price"></span> INR</p>
+    <button onclick="addToCart()">Add to Cart</button>
+
+    <img id="product-image" src="m4.jpg" alt="pixel 7-pro">
+    <h2 id="pixel 7-pro"></h2>
+    <p id="Advanced dual-camera system
+    48MP Main: 26 mm, ƒ/1.6 aperture, sensor‑shift optical image stabilisation, 100% Focus Pixels, support for super-high-resolution photos (24MP and 48MP)
+    12MP Ultra Wide: 13 mm, ƒ/2.4 aperture and 120° field of view
+    12MP 2x Telephoto (enabled by quad-pixel sensor): 52 mm, ƒ/1.6 aperture, sensor-shift optical image stabilisation, 100% Focus Pixels
+    2x optical zoom in, 2x optical zoom out; 4x optical zoom range
+    Digital zoom up to 10x
+    Sapphire crystal lens cover
+    True Tone flash
+    Photonic Engine"></p>
+    <p><strong>Price:35,000</strong> <span id="product-price"></span> INR</p>
+    <button onclick="addToCart()">Add to Cart</button>
+
+    <img id="product-image" src="m2.jpg" alt="galaxy s23 fe">
+    <h2 id="alaxy s23 fe"></h2>
+    <p id="Advanced dual-camera system
+    48MP Main: 26 mm, ƒ/1.6 aperture, sensor‑shift optical image stabilisation, 100% Focus Pixels, support for super-high-resolution photos (24MP and 48MP)
+    12MP Ultra Wide: 13 mm, ƒ/2.4 aperture and 120° field of view
+    12MP 2x Telephoto (enabled by quad-pixel sensor): 52 mm, ƒ/1.6 aperture, sensor-shift optical image stabilisation, 100% Focus Pixels
+    2x optical zoom in, 2x optical zoom out; 4x optical zoom range
+    Digital zoom up to 10x
+    Sapphire crystal lens cover
+    True Tone flash
+    Photonic Engine"></p>
+    <p><strong>Price:55,000</strong> <span id="product-price"></span> INR</p>
+    <button onclick="addToCart()">Add to Cart</button>
+  </div>
+
+  <script >
+  const products = [
+    {
+      id: 1,
+      name: 'Smartphone',
+      description: 'Latest model with high-end specs.',
+      price: 15000,
+      image: 'https://via.placeholder.com/200',
+    },
+    {
+      id: 2,
+      name: 'Laptop',
+      description: 'Powerful laptop for all your needs.',
+      price: 45000,
+      image: 'https://via.placeholder.com/200',
+    },
+
+  ];
+  const productDetails = window.location.search;
+if (productDetails.includes('?id=')) {
+  const id = new URLSearchParams(productDetails).get('id');
+  const product = products.find(p => p.id == id);
+
+  if (product) {
+    document.getElementById('product-image').src = product.image;
+    document.getElementById('product-name').innerText = product.name;
+    document.getElementById('product-description').innerText = product.description;
+    document.getElementById('product-price').innerText = product.price;
+  }
+}
+function addToCart() {
+  const productId = new URLSearchParams(window.location.search).get('id');
+  const product = products.find(p => p.id == productId);
+  cart.push(product);
+  alert('Product added to cart');
+}
+
+const cartItemsContainer = document.getElementById('cart-items');
+if (cartItemsContainer) {
+  cart.forEach(item => {
+    const cartItem = `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div>
+          <h3>${item.name}</h3>
+          <p>${item.price} INR</p>
+        </div>
+      </div>
+    `;
+    cartItemsContainer.innerHTML += cartItem;
+  });
+}
+
+
+function checkout() {
+  alert('Checkout functionality not implemented yet.');
+}
+</script>
+</body>
+</html>
